@@ -23,6 +23,7 @@ Scenes="*res://src/scripts/Scenes.gd"
 Scripts="*res://src/scripts/Scripts.gd"
 Signals="*res://src/scripts/Signals.gd"
 Methods="*res://src/scripts/Methods.gd"
+GameData="*res://src/Autoloader/GameData.gd"
 
 [display]
 

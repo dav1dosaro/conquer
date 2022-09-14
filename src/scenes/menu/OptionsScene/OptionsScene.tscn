@@ -1,0 +1,207 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/scenes/menu/OptionsScene/OptionsScene.gd" type="Script" id=1]
+[ext_resource path="res://src/fonts/Saxon-Abbey.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/scenes/menu/TransitionScreen/TransitionScreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/images/UI/Slider/SliderGrabberFocused.png" type="Texture" id=4]
+[ext_resource path="res://src/images/UI/Slider/SliderGrabberNormal.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+outline_size = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxLine" id=3]
+color = Color( 1, 1, 1, 1 )
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id=4]
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id=6]
+color = Color( 0.862745, 0.0784314, 0.235294, 1 )
+thickness = 10
+
+[sub_resource type="DynamicFont" id=5]
+size = 45
+font_data = ExtResource( 2 )
+
+[node name="OptionsScene" type="CanvasLayer"]
+pause_mode = 2
+layer = 128
+script = ExtResource( 1 )
+MainScene = "res://src/scenes/menu/Menu/MainMenu.tscn"
+
+[node name="Elements" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Header" type="Label" parent="Elements"]
+anchor_right = 1.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 100 )
+custom_colors/font_color = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "OPTIONS "
+align = 2
+uppercase = true
+
+[node name="BACK" type="Button" parent="Elements"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = -31.0
+margin_right = 262.0
+margin_bottom = 21.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "BACK"
+flat = true
+align = 0
+
+[node name="TransitionScreen" parent="Elements" instance=ExtResource( 3 )]
+
+[node name="ButtonAudio" type="AudioStreamPlayer" parent="Elements"]
+
+[node name="Music" type="HSlider" parent="Elements"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -336.0
+margin_top = -36.0
+margin_right = -40.0
+margin_bottom = 36.0
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 5 )
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area_highlight = SubResource( 4 )
+custom_styles/grabber_area = SubResource( 6 )
+min_value = -80.0
+max_value = 0.0
+
+[node name="Tag" type="Label" parent="Elements/Music"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -216.0
+margin_right = -320.0
+custom_fonts/font = SubResource( 5 )
+text = "MUSIC"
+valign = 1
+
+[node name="SFX" type="HSlider" parent="Elements"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -336.0
+margin_top = 44.0
+margin_right = -40.0
+margin_bottom = 116.0
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 5 )
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area_highlight = SubResource( 4 )
+custom_styles/grabber_area = SubResource( 6 )
+min_value = -80.0
+max_value = 0.0
+
+[node name="Tag" type="Label" parent="Elements/SFX"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -216.0
+margin_right = -320.0
+custom_fonts/font = SubResource( 5 )
+text = "SFX"
+valign = 1
+
+[node name="UI" type="HSlider" parent="Elements"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -336.0
+margin_top = 124.0
+margin_right = -40.0
+margin_bottom = 196.0
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 5 )
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area_highlight = SubResource( 4 )
+custom_styles/grabber_area = SubResource( 6 )
+min_value = -80.0
+max_value = 0.0
+
+[node name="Tag" type="Label" parent="Elements/UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -216.0
+margin_right = -320.0
+custom_fonts/font = SubResource( 5 )
+text = "UI"
+valign = 1
+
+[node name="Screen" type="Label" parent="Elements"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -552.0
+margin_top = -108.0
+margin_right = -322.0
+margin_bottom = -44.0
+custom_fonts/font = SubResource( 5 )
+text = "FULLSCREEN"
+valign = 1
+
+[node name="On" type="Button" parent="Elements/Screen"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 312.0
+margin_top = -24.0
+margin_right = 370.0
+margin_bottom = 28.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ON"
+flat = true
+align = 0
+
+[node name="Off" type="Button" parent="Elements/Screen"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 440.0
+margin_top = -24.0
+margin_right = 498.0
+margin_bottom = 28.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "OFF"
+flat = true
+align = 0
+
+[connection signal="pressed" from="Elements/BACK" to="." method="_on_BACK_pressed"]
+[connection signal="animation_finished" from="Elements/TransitionScreen/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="mouse_exited" from="Elements/Music" to="." method="_on_Music_mouse_exited"]
+[connection signal="value_changed" from="Elements/Music" to="." method="_on_Music_value_changed"]
+[connection signal="mouse_exited" from="Elements/SFX" to="." method="_on_SFX_mouse_exited"]
+[connection signal="value_changed" from="Elements/SFX" to="." method="_on_SFX_value_changed"]
+[connection signal="mouse_exited" from="Elements/UI" to="." method="_on_UI_mouse_exited"]
+[connection signal="value_changed" from="Elements/UI" to="." method="_on_UI_value_changed"]
+[connection signal="pressed" from="Elements/Screen/On" to="." method="_on_On_pressed"]
+[connection signal="pressed" from="Elements/Screen/Off" to="." method="_on_Off_pressed"]
+
+[editable path="Elements/TransitionScreen"]
