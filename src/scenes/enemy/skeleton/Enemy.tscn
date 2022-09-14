@@ -1,9 +1,10 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Walk.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Attack.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Idle.png" type="Texture" id=3]
 [ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Dead.png" type="Texture" id=4]
+[ext_resource path="res://src/scenes/enemy/skeleton/Enemy.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=111]
 extents = Vector2( 10, 24 )
@@ -265,9 +266,11 @@ extents = Vector2( 26, 23 )
 [node name="Enemy" type="KinematicBody2D" groups=["ENEMY"]]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
+Wall_Smarts = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 8 )
@@ -277,18 +280,20 @@ shape = SubResource( 111 )
 position = Vector2( 12, 0 )
 enabled = true
 cast_to = Vector2( 0, 40 )
+collision_mask = 4
 
 [node name="Wall_Ray" type="RayCast2D" parent="."]
-position = Vector2( 12, 0 )
+position = Vector2( 12, -1 )
 enabled = true
 cast_to = Vector2( 5, 0 )
+collision_mask = 4
 
 [node name="Body" type="AnimatedSprite" parent="."]
 position = Vector2( 7, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 11 )
 animation = "Walk"
-frame = 7
+frame = 3
 playing = true
 
 [node name="TimerHolder" type="Node2D" parent="."]
