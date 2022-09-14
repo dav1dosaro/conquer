@@ -1,10 +1,11 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Walk.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Attack.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Idle.png" type="Texture" id=3]
 [ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Dead.png" type="Texture" id=4]
-[ext_resource path="res://src/scenes/enemy/skeleton/Enemy.gd" type="Script" id=5]
+[ext_resource path="res://src/scenes/enemy/skeleton/Skeleton.gd" type="Script" id=5]
+[ext_resource path="res://src/scenes/enemy/skeleton/images/Skeleton Hit.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=111]
 extents = Vector2( 10, 24 )
@@ -80,6 +81,38 @@ region = Rect2( 688, 0, 43, 37 )
 [sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 2 )
 region = Rect2( 731, 0, 43, 37 )
+
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 30, 32 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 6 )
+region = Rect2( 30, 0, 30, 32 )
+
+[sub_resource type="AtlasTexture" id=114]
+atlas = ExtResource( 6 )
+region = Rect2( 60, 0, 30, 32 )
+
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 6 )
+region = Rect2( 90, 0, 30, 32 )
+
+[sub_resource type="AtlasTexture" id=116]
+atlas = ExtResource( 6 )
+region = Rect2( 120, 0, 30, 32 )
+
+[sub_resource type="AtlasTexture" id=117]
+atlas = ExtResource( 6 )
+region = Rect2( 150, 0, 30, 32 )
+
+[sub_resource type="AtlasTexture" id=118]
+atlas = ExtResource( 6 )
+region = Rect2( 180, 0, 30, 32 )
+
+[sub_resource type="AtlasTexture" id=119]
+atlas = ExtResource( 6 )
+region = Rect2( 210, 0, 30, 32 )
 
 [sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 4 )
@@ -242,7 +275,12 @@ animations = [ {
 "frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": false,
 "name": "Attack",
-"speed": 20.0
+"speed": 12.0
+}, {
+"frames": [ SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ) ],
+"loop": false,
+"name": "Damage",
+"speed": 12.0
 }, {
 "frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ) ],
 "loop": false,
@@ -252,20 +290,20 @@ animations = [ {
 "frames": [ SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [ SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 5.0
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 26, 23 )
 
-[node name="Enemy" type="KinematicBody2D" groups=["ENEMY"]]
+[node name="Skeleton" type="KinematicBody2D" groups=["ENEMY"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 4
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -292,8 +330,8 @@ collision_mask = 4
 position = Vector2( 7, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 11 )
-animation = "Walk"
-frame = 3
+animation = "Damage"
+frame = 7
 playing = true
 
 [node name="TimerHolder" type="Node2D" parent="."]
@@ -306,13 +344,8 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
-[node name="AttackTimer" type="Timer" parent="TimerHolder"]
-wait_time = 0.5
-one_shot = true
-
 [node name="HitArea" type="Area2D" parent="."]
-visible = false
-collision_layer = 4
+position = Vector2( 41, 8 )
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
@@ -326,6 +359,4 @@ shape = SubResource( 45 )
 [connection signal="animation_finished" from="Body" to="." method="_on_Body_animation_finished"]
 [connection signal="timeout" from="TimerHolder/HitTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="TimerHolder/DeathTimer" to="." method="_on_DeathTimer_timeout"]
-[connection signal="timeout" from="TimerHolder/AttackTimer" to="." method="_on_AttackTimer_timeout"]
 [connection signal="body_entered" from="HitArea" to="." method="_on_HitArea_body_entered"]
-[connection signal="body_exited" from="HitArea" to="." method="_on_HitArea_body_exited"]
