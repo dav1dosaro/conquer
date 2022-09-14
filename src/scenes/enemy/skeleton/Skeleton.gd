@@ -4,7 +4,7 @@ var PlayerLoc
 export var Player_Path : NodePath
 
 var gravity = 10
-var Attack_Range = 110
+var Attack_Range = 70
 var velocity = Vector2(0,0)
 var Attacking = false
 var Moving_Right = true

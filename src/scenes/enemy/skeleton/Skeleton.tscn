@@ -385,7 +385,7 @@ position = Vector2( 7, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 11 )
 animation = "Idle"
-frame = 6
+frame = 10
 playing = true
 
 [node name="TimerHolder" type="Node2D" parent="."]
