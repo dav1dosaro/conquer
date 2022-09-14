@@ -4,19 +4,21 @@ var PlayerLoc
 export var Player_Path : NodePath
 
 var gravity = 10
+var Attack_Range = 110
 var velocity = Vector2(0,0)
+var Attacking = false
 var Moving_Right = true
 
 export var Speed = 32
 export var Health = 3
 export var Enemy_Attack_damage = 1
 export var Wall_Smarts = false
-export var Attack_Range = 100
 
 onready var Floor_Raycast = get_node("Floor_Ray")
 onready var Wall_Raycast = get_node("Wall_Ray")
 
 func _ready():
+	get_node("HitArea/CollisionShape2D").disabled = true
 	PlayerLoc = get_node(Player_Path)
 	if Wall_Smarts == true:
 		Wall_Raycast.enabled = true
@@ -36,7 +38,8 @@ func Move():
 		velocity.x = Speed
 	else:
 		velocity.x = -Speed
-	get_node("Body").play("Walk")
+	if Attacking == false:
+		get_node("Body").play("Walk")
 	
 	velocity.y += gravity
 	
@@ -69,9 +72,8 @@ func _on_Timer_timeout():
 
 func _on_Body_animation_finished():
 	if get_node("Body").animation == "Attack":
-		for H in get_node("HitArea").get_overlapping_bodies():
-			H.Health_Detail(Enemy_Attack_damage)
-			get_node("Attack").play()
+		get_node("Body").offset = Vector2(0,0)
+		Attacking = false
 	
 	if get_node("Body").animation == "Death":
 		self.global_position = self.global_position
@@ -91,6 +93,11 @@ func _on_HitArea_body_entered(body):
 func Attack():
 	var PLoc = PlayerLoc.position
 	var Dis2 = self.position.distance_to(PLoc)
+	
 	if Dis2 < Attack_Range:
+		Attacking = true
+		get_node("Body").offset = Vector2(8,-2)
 		get_node("Body").play("Attack")
-		pass
+		get_node("AnimationPlayer").play("ATK")
+		get_node("Attack").play()
+		
