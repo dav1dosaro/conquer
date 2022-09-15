@@ -356,7 +356,7 @@ tracks/1/keys = {
 }
 
 [node name="Skeleton" type="KinematicBody2D" groups=["ENEMY"]]
-collision_layer = 4
+collision_layer = 2
 collision_mask = 4
 script = ExtResource( 5 )
 __meta__ = {
@@ -385,7 +385,7 @@ position = Vector2( 7, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 11 )
 animation = "Idle"
-frame = 5
+frame = 4
 playing = true
 
 [node name="TimerHolder" type="Node2D" parent="."]
@@ -400,7 +400,7 @@ one_shot = true
 
 [node name="HitArea" type="Area2D" parent="."]
 position = Vector2( 39, -3 )
-collision_mask = 2
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
 shape = SubResource( 45 )

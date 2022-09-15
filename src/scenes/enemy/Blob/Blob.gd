@@ -3,8 +3,11 @@ extends KinematicBody2D
 enum EnemyStates {IDLE,CHASE,ATTACK,DEATH}
 var States = EnemyStates.IDLE
 
+var PlayerLoc
+export var Player_Path : NodePath
 
 func _ready():
+	PlayerLoc = get_node(Player_Path)
 	pass
 
 func _process(delta):
