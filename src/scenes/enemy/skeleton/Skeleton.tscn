@@ -322,10 +322,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true, false, true ]
+"values": [ true, false, false, true ]
 }
 
 [sub_resource type="Animation" id=121]
@@ -385,7 +385,7 @@ position = Vector2( 7, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 11 )
 animation = "Idle"
-frame = 10
+frame = 5
 playing = true
 
 [node name="TimerHolder" type="Node2D" parent="."]
