@@ -4,7 +4,7 @@
 [ext_resource path="res://src/scenes/splash/Splash.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 32
+size = 48
 font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=2]
@@ -90,15 +90,15 @@ anchor_bottom = 1.0
 
 [node name="Label" type="Label" parent="CenterContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 539.0
-margin_top = 494.0
-margin_right = 740.0
-margin_bottom = 530.0
+margin_left = 379.0
+margin_top = 272.0
+margin_right = 645.0
+margin_bottom = 327.0
 rect_scale = Vector2( 1, 0.1 )
 rect_pivot_offset = Vector2( 92, 18 )
 custom_colors/font_color_shadow = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "DAVE X ISAIAH"
+text = "Potato devs"
 align = 1
 valign = 1
 
