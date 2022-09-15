@@ -6,6 +6,7 @@
 [ext_resource path="res://src/scenes/enemy/Blob/Blob.tscn" type="PackedScene" id=4]
 
 
+
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
