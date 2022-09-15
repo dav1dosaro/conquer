@@ -46,6 +46,26 @@ collision_mask = 4
 format = 1
 tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 458752, 0, 0, 458766, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0 )
 
+[node name="block" type="StaticBody2D" parent="Structures"]
+position = Vector2( 672, 507 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Structures/block"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -50.0
+margin_right = 20.0
+margin_bottom = 50.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Structures/block"]
+shape = SubResource( 2 )
+
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 555, 437 )
 
@@ -53,6 +73,11 @@ position = Vector2( 555, 437 )
 position = Vector2( 248, 472 )
 Player_Path = NodePath("../player")
 
+<<<<<<< HEAD
 [node name="Skeleton" parent="." instance=ExtResource( 2 )]
 position = Vector2( 776, 480 )
+=======
+[node name="Blob" parent="." instance=ExtResource( 4 )]
+position = Vector2( 464, 496 )
+>>>>>>> 19e62e9d113a721cdd3cbd2d6c84339776fac71b
 Player_Path = NodePath("../player")
