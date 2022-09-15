@@ -100,4 +100,3 @@ func Attack():
 		get_node("Body").play("Attack")
 		get_node("AnimationPlayer").play("ATK")
 		get_node("Attack").play()
-		
