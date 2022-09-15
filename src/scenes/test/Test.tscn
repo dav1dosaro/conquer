@@ -5,6 +5,8 @@
 [ext_resource path="res://src/images/icon.png" type="Texture" id=3]
 [ext_resource path="res://src/scenes/enemy/Blob/Blob.tscn" type="PackedScene" id=4]
 
+
+
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
@@ -49,12 +51,12 @@ tile_data = PoolIntArray( 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 555, 437 )
 
-[node name="Skeleton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 720, 480 )
+[node name="Blob" parent="." instance=ExtResource( 4 )]
+position = Vector2( 248, 472 )
 Player_Path = NodePath("../player")
 
-[node name="Blob" parent="." instance=ExtResource( 4 )]
-position = Vector2( 464, 496 )
+[node name="Skeleton" parent="." instance=ExtResource( 2 )]
+position = Vector2( 776, 480 )
 Player_Path = NodePath("../player")
 
 [node name="trail_holder" type="Node2D" parent="."]
