@@ -16,6 +16,7 @@ font_data = ExtResource( 2 )
 [node name="Pause" type="CanvasLayer"]
 pause_mode = 2
 layer = 128
+visible = false
 script = ExtResource( 1 )
 MainMenu = "res://src/scenes/menu/Menu/MainMenu.tscn"
 
