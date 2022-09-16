@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/scenes/menu/Menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/fonts/Saxon-Abbey.otf" type="DynamicFontData" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://src/images/backgrounds/Dungeon Ruins Tileset Night.png" type="Texture" id=4]
 [ext_resource path="res://src/images/backgrounds/Sci-fi Tileset re-imagined.png" type="Texture" id=5]
 [ext_resource path="res://src/images/backgrounds/Dead Tileset V2.png" type="Texture" id=6]
-[ext_resource path="res://src/fonts/cenobyte.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://src/fonts/NekroKids.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://src/images/backgrounds/BloodOverlay.png" type="Texture" id=9]
 
@@ -626,10 +625,9 @@
 4/z_index = 0
 
 [sub_resource type="DynamicFont" id=2]
-size = 84
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 7 )
+size = 100
+outline_size = 2
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
