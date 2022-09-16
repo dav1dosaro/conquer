@@ -15,9 +15,11 @@ export var attack = false
 
 export var Idle_distance = 400
 export var chase_distance = 300
-export var attack_distance = 100
+export var attack_distance = 70
 
 func _ready():
+	get_node("Body").visible = true
+	get_node("Explosion").visible = false
 	PlayerLoc = get_node(Player_Path)
 	pass
 
@@ -45,18 +47,17 @@ func _process(delta):
 	if PlayerLoc.is_on_floor():
 		if Dis2 > Idle_distance:
 			States = EnemyStates.IDLE
-			print("IDLE")
+			get_node("Body").play("Idle")
 			pass
 		elif Dis2 > chase_distance and Dis2 < Idle_distance:
 			States = EnemyStates.CHASE
-			print("CHASE")
+			get_node("Body").play("Walk")
 			pass
 		elif Dis2 < attack_distance:
 			States = EnemyStates.ATTACK
-			print("ATTACK")
+			get_node("Body").play("Attack")
 			pass
 	pass
-
 
 func idle():
 	velocity.x = 0
@@ -66,7 +67,13 @@ func Chase():
 	velocity.x = Speed
 
 func Attack():
-	velocity.y = -350
+	velocity.y = -325
+	get_node("Body").visible = false
+	get_node("Explosion").play("Explosion")
+	get_node("AnimationPlayer").play("ATK")
 	attack = true
 	pass
 
+func _on_Explosion_animation_finished():
+	if get_node("Explosion").animation == "Explosion":
+		self.queue_free()

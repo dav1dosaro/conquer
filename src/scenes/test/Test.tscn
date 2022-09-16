@@ -49,12 +49,12 @@ tile_data = PoolIntArray( 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 555, 437 )
 
-[node name="Blob" parent="." instance=ExtResource( 4 )]
-position = Vector2( 248, 472 )
-Player_Path = NodePath("../player")
-
 [node name="Skeleton" parent="." instance=ExtResource( 2 )]
 position = Vector2( 776, 480 )
 Player_Path = NodePath("../player")
 
 [node name="trail_holder" type="Node2D" parent="."]
+
+[node name="Blob" parent="." instance=ExtResource( 4 )]
+position = Vector2( 216, 472 )
+Player_Path = NodePath("../player")
