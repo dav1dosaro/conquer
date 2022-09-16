@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=2]
+[gd_scene load_steps=168 format=2]
 
 [ext_resource path="res://src/images/characters/vagabond/vagabond-idle/vagabond-idle-0.png" type="Texture" id=1]
 [ext_resource path="res://src/images/characters/vagabond/vagabond-idle/vagabond-idle-1.png" type="Texture" id=2]
@@ -59,6 +59,32 @@
 [ext_resource path="res://src/images/characters/vagabond/vagabond-jump-attack/vagabond-jump-attack-6.png" type="Texture" id=57]
 [ext_resource path="res://src/images/characters/vagabond/vagabond-jump-attack/vagabond-jump-attack-15.png" type="Texture" id=58]
 [ext_resource path="res://src/images/characters/vagabond/vagabond-jump-attack/vagabond-jump-attack-7.png" type="Texture" id=59]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-2.png" type="Texture" id=60]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-0.png" type="Texture" id=61]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-6.png" type="Texture" id=62]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-10.png" type="Texture" id=63]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-5.png" type="Texture" id=64]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-1.png" type="Texture" id=65]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-3.png" type="Texture" id=66]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-11.png" type="Texture" id=67]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-9.png" type="Texture" id=68]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-7.png" type="Texture" id=69]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-8.png" type="Texture" id=70]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-12.png" type="Texture" id=71]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-heavy-attack/vagabond-heavy-attack-4.png" type="Texture" id=72]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-block/vagabond-block-0.png" type="Texture" id=73]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-block/vagabond-block-1.png" type="Texture" id=74]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-knockback/vagabond-knockback-3.png" type="Texture" id=75]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-death/vagabond-death-5.png" type="Texture" id=76]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-death/vagabond-death-4.png" type="Texture" id=77]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-knockback/vagabond-knockback-0.png" type="Texture" id=78]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-knockback/vagabond-knockback-1.png" type="Texture" id=79]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-death/vagabond-death-1.png" type="Texture" id=80]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-death/vagabond-death-6.png" type="Texture" id=81]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-death/vagabond-death-3.png" type="Texture" id=82]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-knockback/vagabond-knockback-2.png" type="Texture" id=83]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-death/vagabond-death-2.png" type="Texture" id=84]
+[ext_resource path="res://src/images/characters/vagabond/vagabond-death/vagabond-death-0.png" type="Texture" id=85]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 12, 38 )
@@ -206,6 +232,33 @@ tracks/1/keys = {
 "values": [ Vector2( 95, -95 ) ]
 }
 
+[sub_resource type="Animation" id=81]
+resource_name = "block"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 73 ), ExtResource( 74 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -95 ) ]
+}
+
 [sub_resource type="Animation" id=24]
 resource_name = "dash"
 length = 0.15
@@ -233,6 +286,77 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, -95 ) ]
+}
+
+[sub_resource type="Animation" id=85]
+resource_name = "death"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 85 ), ExtResource( 80 ), ExtResource( 80 ), ExtResource( 84 ), ExtResource( 82 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 81 ) ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "heavy-attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 61 ), ExtResource( 65 ), ExtResource( 60 ), ExtResource( 66 ), ExtResource( 72 ), ExtResource( 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 85, -95 ) ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "heavy-attack-end"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 62 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 68 ), ExtResource( 63 ), ExtResource( 67 ), ExtResource( 71 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 85, -95 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -408,6 +532,35 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -35 ) ]
 }
 
+[sub_resource type="Animation" id=86]
+resource_name = "knockback"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 78 ), ExtResource( 79 ), ExtResource( 83 ), ExtResource( 75 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -95 ) ]
+}
+
 [sub_resource type="Animation" id=16]
 resource_name = "land"
 length = 0.4
@@ -508,8 +661,20 @@ animation = "attack-3"
 [sub_resource type="AnimationNodeAnimation" id=51]
 animation = "attack"
 
+[sub_resource type="AnimationNodeAnimation" id=82]
+animation = "block"
+
 [sub_resource type="AnimationNodeAnimation" id=25]
 animation = "dash"
+
+[sub_resource type="AnimationNodeAnimation" id=87]
+animation = "death"
+
+[sub_resource type="AnimationNodeAnimation" id=78]
+animation = "heavy-attack-end"
+
+[sub_resource type="AnimationNodeAnimation" id=75]
+animation = "heavy-attack"
 
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "idle"
@@ -528,6 +693,9 @@ animation = "jump-flip"
 
 [sub_resource type="AnimationNodeAnimation" id=37]
 animation = "jump"
+
+[sub_resource type="AnimationNodeAnimation" id=88]
+animation = "knockback"
 
 [sub_resource type="AnimationNodeAnimation" id=38]
 animation = "land"
@@ -609,6 +777,28 @@ auto_advance = true
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=76]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=77]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=79]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=80]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=83]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=84]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=89]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=90]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=91]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=92]
+
 [sub_resource type="AnimationNodeStateMachine" id=4]
 states/air-dash/node = SubResource( 32 )
 states/air-dash/position = Vector2( 157.34, -34 )
@@ -618,8 +808,16 @@ states/attack-2/node = SubResource( 55 )
 states/attack-2/position = Vector2( -11.0697, 33 )
 states/attack-3/node = SubResource( 59 )
 states/attack-3/position = Vector2( -11.0697, -48.5974 )
+states/block/node = SubResource( 82 )
+states/block/position = Vector2( 267, -127.987 )
 states/dash/node = SubResource( 25 )
 states/dash/position = Vector2( 377, -34 )
+states/death/node = SubResource( 87 )
+states/death/position = Vector2( 656.73, 33 )
+states/heavy-attack/node = SubResource( 75 )
+states/heavy-attack/position = Vector2( -163.75, 152.858 )
+states/heavy-attack-end/node = SubResource( 78 )
+states/heavy-attack-end/position = Vector2( -163.75, 227.588 )
 states/idle/node = SubResource( 3 )
 states/idle/position = Vector2( 267, 59 )
 states/jump/node = SubResource( 37 )
@@ -632,15 +830,17 @@ states/jump-attack-3/node = SubResource( 69 )
 states/jump-attack-3/position = Vector2( -198.62, -85.7049 )
 states/jump-flip/node = SubResource( 36 )
 states/jump-flip/position = Vector2( 92, 166.935 )
+states/knockback/node = SubResource( 88 )
+states/knockback/position = Vector2( 545.73, -21.9701 )
 states/land/node = SubResource( 38 )
 states/land/position = Vector2( 267, 256.935 )
 states/run/node = SubResource( 8 )
 states/run/position = Vector2( 524, 59 )
 states/run-end/node = SubResource( 11 )
 states/run-end/position = Vector2( 524, 166.935 )
-transitions = [ "run-end", "idle", SubResource( 13 ), "idle", "dash", SubResource( 26 ), "dash", "idle", SubResource( 30 ), "air-dash", "idle", SubResource( 33 ), "idle", "air-dash", SubResource( 34 ), "jump-flip", "idle", SubResource( 39 ), "run-end", "jump", SubResource( 41 ), "jump", "run-end", SubResource( 42 ), "jump", "idle", SubResource( 43 ), "jump", "jump-flip", SubResource( 44 ), "idle", "jump", SubResource( 45 ), "jump", "land", SubResource( 46 ), "land", "idle", SubResource( 47 ), "jump-flip", "land", SubResource( 48 ), "jump-flip", "jump", SubResource( 49 ), "idle", "attack", SubResource( 52 ), "attack", "idle", SubResource( 53 ), "attack", "attack-2", SubResource( 56 ), "attack-2", "idle", SubResource( 57 ), "attack-2", "attack-3", SubResource( 60 ), "attack-3", "idle", SubResource( 61 ), "idle", "run", SubResource( 9 ), "run", "run-end", SubResource( 12 ), "run-end", "run", SubResource( 14 ), "run", "jump", SubResource( 40 ), "idle", "jump-attack", SubResource( 64 ), "jump-attack", "idle", SubResource( 65 ), "jump-attack", "jump-attack-2", SubResource( 70 ), "jump-attack-2", "jump-attack-3", SubResource( 71 ), "jump-attack-3", "land", SubResource( 72 ) ]
+transitions = [ "run-end", "idle", SubResource( 13 ), "idle", "dash", SubResource( 26 ), "dash", "idle", SubResource( 30 ), "air-dash", "idle", SubResource( 33 ), "idle", "air-dash", SubResource( 34 ), "jump-flip", "idle", SubResource( 39 ), "run-end", "jump", SubResource( 41 ), "jump", "run-end", SubResource( 42 ), "jump", "idle", SubResource( 43 ), "jump", "jump-flip", SubResource( 44 ), "idle", "jump", SubResource( 45 ), "jump", "land", SubResource( 46 ), "land", "idle", SubResource( 47 ), "jump-flip", "land", SubResource( 48 ), "jump-flip", "jump", SubResource( 49 ), "idle", "attack", SubResource( 52 ), "attack", "idle", SubResource( 53 ), "attack", "attack-2", SubResource( 56 ), "attack-2", "idle", SubResource( 57 ), "attack-2", "attack-3", SubResource( 60 ), "attack-3", "idle", SubResource( 61 ), "idle", "run", SubResource( 9 ), "run", "run-end", SubResource( 12 ), "run-end", "run", SubResource( 14 ), "run", "jump", SubResource( 40 ), "idle", "jump-attack", SubResource( 64 ), "jump-attack", "idle", SubResource( 65 ), "jump-attack", "jump-attack-2", SubResource( 70 ), "jump-attack-2", "jump-attack-3", SubResource( 71 ), "jump-attack-3", "land", SubResource( 72 ), "idle", "heavy-attack", SubResource( 76 ), "attack", "heavy-attack", SubResource( 77 ), "heavy-attack", "heavy-attack-end", SubResource( 79 ), "heavy-attack-end", "idle", SubResource( 80 ), "block", "idle", SubResource( 83 ), "idle", "block", SubResource( 84 ), "knockback", "idle", SubResource( 89 ), "idle", "knockback", SubResource( 90 ), "death", "idle", SubResource( 91 ), "idle", "death", SubResource( 92 ) ]
 start_node = "idle"
-graph_offset = Vector2( -353.19, -45.7799 )
+graph_offset = Vector2( 83.7296, -28.8001 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
@@ -664,13 +864,18 @@ anims/air-dash = SubResource( 31 )
 anims/attack = SubResource( 50 )
 anims/attack-2 = SubResource( 54 )
 anims/attack-3 = SubResource( 58 )
+anims/block = SubResource( 81 )
 anims/dash = SubResource( 24 )
+anims/death = SubResource( 85 )
+anims/heavy-attack = SubResource( 73 )
+anims/heavy-attack-end = SubResource( 74 )
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 15 )
 anims/jump-attack = SubResource( 62 )
 anims/jump-attack-2 = SubResource( 66 )
 anims/jump-attack-3 = SubResource( 67 )
 anims/jump-flip = SubResource( 35 )
+anims/knockback = SubResource( 86 )
 anims/land = SubResource( 16 )
 anims/run = SubResource( 7 )
 anims/run-end = SubResource( 10 )

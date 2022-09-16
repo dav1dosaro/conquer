@@ -21,6 +21,8 @@ var dash_speed = 150
 
 #attack
 var attacking = false
+var heavy_attacking = false
+var blocking = false
 var attack_count = 0
 
 #nodes
@@ -39,9 +41,10 @@ func _ready():
 	pass
 	
 func _process(delta):
-	movement()
-	jump()
-	dash()
+	if !blocking and !heavy_attacking:
+		movement()
+		jump()
+		dash()
 	attack()
 	vel = move_and_slide(vel, Vector2.UP)
 	pass
@@ -97,7 +100,7 @@ func dash():
 	pass
 
 func attack():
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and !blocking and !heavy_attacking:
 		vel = Vector2.ZERO
 		if attack_count <= 2:
 			attack_timer.start()
@@ -118,6 +121,20 @@ func attack():
 				state.travel("jump-attack-2")
 			if attack_count > 2:
 				state.travel("jump-attack-3")
+	if Input.is_action_just_pressed("heavy-attack") and is_on_floor() and !blocking:
+		heavy_attacking = true
+		vel.x = 0
+		state.start("heavy-attack")
+	if Input.is_action_just_released("heavy-attack") and heavy_attacking and !blocking:
+		state.start("heavy-attack-end")
+		yield(get_tree().create_timer(0.5),"timeout")
+		heavy_attacking = false
+	if Input.is_action_just_pressed("block"):
+		blocking = true
+		vel.x = 0
+		state.start("block")
+	if Input.is_action_just_released("block"):
+		blocking = false
 	pass
 
 func revert_attack():

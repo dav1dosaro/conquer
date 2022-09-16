@@ -1,6 +1,6 @@
 extends Node
 
-onready var main_menu_scene = preload("res://src/scenes/main/Main.tscn")
+onready var main_menu_scene = preload("res://src/scenes/menu/Menu/MainMenu.tscn")
 onready var splash_scene = preload("res://src/scenes/splash/Splash.tscn")
 onready var test_scene = preload("res://src/scenes/test/Test.tscn")
 onready var dash_trail_scene = preload("res://src/scenes/others/trail/Trail.tscn")

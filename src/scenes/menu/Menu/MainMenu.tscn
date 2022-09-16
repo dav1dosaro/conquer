@@ -1,17 +1,675 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/scenes/menu/Menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/fonts/Saxon-Abbey.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/scenes/menu/TransitionScreen/TransitionScreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/images/backgrounds/Dungeon Ruins Tileset Night.png" type="Texture" id=4]
+[ext_resource path="res://src/images/backgrounds/Sci-fi Tileset re-imagined.png" type="Texture" id=5]
+[ext_resource path="res://src/images/backgrounds/Dead Tileset V2.png" type="Texture" id=6]
+[ext_resource path="res://src/fonts/cenobyte.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://src/fonts/NekroKids.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://src/images/backgrounds/BloodOverlay.png" type="Texture" id=9]
+
+[sub_resource type="TileSet" id=9]
+0/name = "Dead Tileset V2.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 160, 0, 16, 48 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Dead Tileset V2.png 1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 144, 128, 112, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Dead Tileset V2.png 2"
+2/texture = ExtResource( 6 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 112, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Dead Tileset V2.png 3"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 112, 176, 16, 48 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Dead Tileset V2.png 4"
+4/texture = ExtResource( 6 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 176, 0, 80, 96 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Dead Tileset V2.png 5"
+5/texture = ExtResource( 6 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 144, 48, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Dead Tileset V2.png 6"
+6/texture = ExtResource( 6 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 80, 0, 80, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Dead Tileset V2.png 7"
+7/texture = ExtResource( 6 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 96, 80, 32, 32 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Dead Tileset V2.png 8"
+8/texture = ExtResource( 6 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 80, 48, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Dead Tileset V2.png 9"
+9/texture = ExtResource( 6 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 48, 80, 48, 16 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+
+[sub_resource type="TileSet" id=5]
+0/name = "Dungeon Ruins Tileset Night.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 320, 144, 192, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=6]
+1/name = "Dungeon Ruins Tileset Night.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 16, 16, 16 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [  ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Dungeon Ruins Tileset Night.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 16, 16, 48, 48 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 0
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 256, Vector2( 0, 1 ), 260, Vector2( 0, 2 ), 4, Vector2( 1, 0 ), 320, Vector2( 1, 1 ), 325, Vector2( 1, 2 ), 5, Vector2( 2, 0 ), 64, Vector2( 2, 1 ), 65, Vector2( 2, 2 ), 1 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 16, 16 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Dungeon Ruins Tileset Night.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 80, 16, 48, 48 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 1
+3/autotile/bitmask_flags = [ Vector2( 0, 0 ), 176, Vector2( 0, 1 ), 146, Vector2( 0, 2 ), 50, Vector2( 1, 0 ), 56, Vector2( 1, 2 ), 56, Vector2( 2, 0 ), 152, Vector2( 2, 1 ), 146, Vector2( 2, 2 ), 26 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 16, 16 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Dungeon Ruins Tileset Night.png 4"
+4/texture = ExtResource( 4 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 448, 0, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Dungeon Ruins Tileset Night.png 5"
+5/texture = ExtResource( 4 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 128, 224, 64, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+
+[sub_resource type="TileSet" id=7]
+0/name = "Dungeon Ruins Tileset Night.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 448, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Dungeon Ruins Tileset Night.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 96, 144, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Dungeon Ruins Tileset Night.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 128, 144, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Dungeon Ruins Tileset Night.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 160, 128, 32, 48 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Dungeon Ruins Tileset Night.png 4"
+4/texture = ExtResource( 4 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 192, 128, 32, 48 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Dungeon Ruins Tileset Night.png 5"
+5/texture = ExtResource( 4 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 224, 160, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Dungeon Ruins Tileset Night.png 6"
+6/texture = ExtResource( 4 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 240, 160, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Dungeon Ruins Tileset Night.png 7"
+7/texture = ExtResource( 4 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 320, 0, 16, 64 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Dungeon Ruins Tileset Night.png 8"
+8/texture = ExtResource( 4 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 336, 0, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Dungeon Ruins Tileset Night.png 9"
+9/texture = ExtResource( 4 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 352, 0, 16, 48 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "Dungeon Ruins Tileset Night.png 10"
+10/texture = ExtResource( 4 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 368, 0, 16, 48 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "Dungeon Ruins Tileset Night.png 11"
+11/texture = ExtResource( 4 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 32, 224, 16, 16 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "Dungeon Ruins Tileset Night.png 12"
+12/texture = ExtResource( 4 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 128, 208, 80, 16 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "Dungeon Ruins Tileset Night.png 13"
+13/texture = ExtResource( 4 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 224, 176, 16, 32 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "Dungeon Ruins Tileset Night.png 14"
+14/texture = ExtResource( 4 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 128, 176, 16, 32 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+
+[sub_resource type="TileSet" id=3]
+0/name = "Dungeon Ruins Tileset Night.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 16, 160, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Dungeon Ruins Tileset Night.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 160, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Dungeon Ruins Tileset Night.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 320, 112, 192, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[sub_resource type="TileSet" id=4]
+0/name = "Dungeon Ruins Tileset Night.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 320, 112, 192, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Dungeon Ruins Tileset Night.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 320, 144, 192, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="TileSet" id=8]
+0/name = "Sci-fi Tileset re-imagined.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 480, 208, 112, 48 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Sci-fi Tileset re-imagined.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 592, 128, 64, 48 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Sci-fi Tileset re-imagined.png 2"
+2/texture = ExtResource( 5 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 624, 64, 32, 48 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Sci-fi Tileset re-imagined.png 3"
+3/texture = ExtResource( 5 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 224, 224, 16, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Sci-fi Tileset re-imagined.png 4"
+4/texture = ExtResource( 5 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 144, 128, 64, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
 
 [sub_resource type="DynamicFont" id=2]
-size = 100
-outline_size = 2
-font_data = ExtResource( 2 )
+size = 84
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "New Anim"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Elements/bloodSplat:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Elements/bloodSplat:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="MainMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -21,21 +679,123 @@ StoryScene = "res://src/scenes/menu/StoryScene/StoryScene.tscn"
 OptionsScene = "res://src/scenes/menu/OptionsScene/OptionsScene.tscn"
 ControlScene = "res://src/scenes/menu/ControlsScene/ControlsScene.tscn"
 
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+
+[node name="Sprite" type="Sprite" parent="Background"]
+texture = ExtResource( 4 )
+region_enabled = true
+
+[node name="TileMap3" type="TileMap" parent="Background"]
+visible = false
+position = Vector2( 0, 16 )
+scale = Vector2( 3, 3 )
+tile_set = SubResource( 9 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393230, 4, 0, 720914, 2, 0, 786445, 1, 0 )
+
+[node name="mountains2" type="TileMap" parent="Background"]
+modulate = Color( 1, 1, 1, 0.0392157 )
+position = Vector2( 0, 103 )
+scale = Vector2( 2, 4.48 )
+tile_set = SubResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458738, 0, 0, 458750, 0, 0, 393226, 0, 0, 393238, 0, 0, 393250, 0, 0 )
+
+[node name="Structures" type="TileMap" parent="Background"]
+visible = false
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 0, -15 )
+scale = Vector2( 1.5, 1.5 )
+tile_set = SubResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1048576, 5, 0, 1179646, 2, 0, 1179647, 2, 1, 1114112, 2, 1, 1114113, 2, 1, 1114114, 2, 1, 1114115, 2, 2, 1245182, 2, 65536, 1245183, 2, 65537, 1179648, 2, 65537, 1179649, 2, 65537, 1179650, 2, 65537, 1179651, 2, 65538, 1310718, 2, 65536, 1310719, 2, 65537, 1245184, 2, 65537, 1245185, 2, 65537, 1245186, 2, 65537, 1245187, 2, 65538, 1376254, 2, 65536, 1376255, 2, 65537, 1310720, 2, 65537, 1310721, 2, 65537, 1310722, 2, 65537, 1310723, 2, 65538, 1310724, 5, 0, 1441790, 2, 131072, 1441791, 2, 131073, 1376256, 2, 131073, 1376257, 2, 131073, 1376258, 2, 131073, 1376259, 2, 131074 )
+
+[node name="Structures2" type="TileMap" parent="Background"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 0, 88 )
+scale = Vector2( 3, 3 )
+tile_set = SubResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -65521, 0, 0, 65551, 13, 0, 524288, 4, 0, 524298, 3, 0, 524302, 4, 0, 524307, 3, 0, 589832, 2, 0, 589836, 1, 0, 655361, 5, 0 )
+
+[node name="Structures3" type="TileMap" parent="Background"]
+modulate = Color( 1, 0, 0, 0.352941 )
+position = Vector2( 0, 88 )
+scale = Vector2( 3, 3 )
+tile_set = SubResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 18, 14, 0, 65551, 13, 0, 524298, 3, 0, 524307, 3, 0, 589832, 13, 0, 589836, 1, 0, 655361, 5, 0 )
+
+[node name="mountains" type="TileMap" parent="Background"]
+visible = false
+modulate = Color( 1, 1, 1, 0.427451 )
+position = Vector2( 0, 103 )
+scale = Vector2( 1, 1.48 )
+tile_set = SubResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1376251, 0, 0, 1310727, 0, 0, 1310739, 0, 0, 1310751, 0, 0, 1310763, 0, 0, 1310775, 0, 0 )
+
+[node name="TileMap" type="TileMap" parent="Background"]
+position = Vector2( 0, 103 )
+tile_set = SubResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 2097143, 0, 0, 2097144, 0, 0, 2097145, 0, 0, 2097146, 0, 0, 2097147, 0, 0, 2097148, 0, 0, 2097149, 0, 0, 2097150, 0, 0, 2097151, 0, 0, 2031616, 0, 0, 2031617, 0, 0, 2031618, 0, 0, 2031619, 0, 0, 2031620, 0, 0, 2031621, 0, 0, 2031622, 0, 0, 2031623, 0, 0, 2031624, 0, 0, 2031625, 0, 0, 2031626, 0, 0, 2031627, 0, 0, 2031628, 0, 0, 2031629, 0, 0, 2031630, 0, 0, 2031631, 0, 0, 2031632, 0, 0, 2031633, 0, 0, 2031634, 0, 0, 2031635, 0, 0, 2031636, 0, 0, 2031637, 0, 0, 2031638, 0, 0, 2031639, 0, 0, 2031640, 0, 0, 2031641, 0, 0, 2031642, 0, 0, 2031643, 0, 0, 2031644, 0, 0, 2031645, 0, 0, 2031646, 0, 0, 2031647, 0, 0, 2031648, 0, 0, 2031649, 0, 0, 2031650, 0, 0, 2031651, 0, 0, 2031652, 0, 0, 2031653, 0, 0, 2031654, 0, 0, 2031655, 0, 0, 2031656, 0, 0, 2031657, 0, 0, 2031658, 0, 0, 2031659, 0, 0, 2031660, 0, 0, 2031661, 0, 0, 2031662, 0, 0, 2031663, 0, 0, 2031664, 0, 0, 2031665, 0, 0, 2031666, 0, 0, 2031667, 0, 0, 2031668, 0, 0, 2031669, 0, 0, 2031670, 0, 0, 2031671, 0, 0, 2031672, 0, 0, 2031673, 0, 0, 2031674, 0, 0, 2031675, 0, 0, 2031676, 0, 0, 2031677, 0, 0, 2031678, 0, 0, 2031679, 0, 0, 2031680, 0, 0, 2031681, 0, 0, 2031682, 0, 0, 2031683, 0, 0, 2031684, 0, 0, 2031685, 0, 0, 2031686, 0, 0, 2031687, 0, 0, 2031688, 0, 0, 2031689, 0, 0, 2031690, 0, 0, 2031691, 0, 0, 2162679, 0, 0, 2162680, 0, 0, 2162681, 0, 0, 2162682, 0, 0, 2162683, 0, 0, 2162684, 0, 0, 2162685, 0, 0, 2162686, 0, 0, 2162687, 0, 0, 2097152, 0, 0, 2097153, 0, 0, 2097154, 0, 0, 2097155, 0, 0, 2097156, 0, 0, 2097157, 0, 0, 2097158, 0, 0, 2097159, 0, 0, 2097160, 0, 0, 2097161, 0, 0, 2097162, 0, 0, 2097163, 0, 0, 2097164, 0, 0, 2097165, 0, 0, 2097166, 0, 0, 2097167, 0, 0, 2097168, 0, 0, 2097169, 0, 0, 2097170, 0, 0, 2097171, 0, 0, 2097172, 0, 0, 2097173, 0, 0, 2097174, 0, 0, 2097175, 0, 0, 2097176, 0, 0, 2097177, 0, 0, 2097178, 0, 0, 2097179, 0, 0, 2097180, 0, 0, 2097181, 0, 0, 2097182, 0, 0, 2097183, 0, 0, 2097184, 0, 0, 2097185, 0, 0, 2097186, 0, 0, 2097187, 0, 0, 2097188, 0, 0, 2097189, 0, 0, 2097190, 0, 0, 2097191, 0, 0, 2097192, 0, 0, 2097193, 0, 0, 2097194, 0, 0, 2097195, 0, 0, 2097196, 0, 0, 2097197, 0, 0, 2097198, 0, 0, 2097199, 0, 0, 2097200, 0, 0, 2097201, 0, 0, 2097202, 0, 0, 2097203, 0, 0, 2097204, 0, 0, 2097205, 0, 0, 2097206, 0, 0, 2097207, 0, 0, 2097208, 0, 0, 2097209, 0, 0, 2097210, 0, 0, 2097211, 0, 0, 2097212, 0, 0, 2097213, 0, 0, 2097214, 0, 0, 2097215, 0, 0, 2097216, 0, 0, 2097217, 0, 0, 2097218, 0, 0, 2097219, 0, 0, 2097220, 0, 0, 2097221, 0, 0, 2097222, 0, 0, 2097223, 0, 0, 2097224, 0, 0, 2097225, 0, 0, 2097226, 0, 0, 2097227, 0, 0, 2228215, 0, 0, 2228216, 0, 0, 2228217, 0, 0, 2228218, 0, 0, 2228219, 0, 0, 2228220, 0, 0, 2228221, 0, 0, 2228222, 0, 0, 2228223, 0, 0, 2162688, 0, 0, 2162689, 0, 0, 2162690, 0, 0, 2162691, 0, 0, 2162692, 0, 0, 2162693, 0, 0, 2162694, 0, 0, 2162695, 0, 0, 2162696, 0, 0, 2162697, 0, 0, 2162698, 0, 0, 2162699, 0, 0, 2162700, 0, 0, 2162701, 0, 0, 2162702, 0, 0, 2162703, 0, 0, 2162704, 0, 0, 2162705, 0, 0, 2162706, 0, 0, 2162707, 0, 0, 2162708, 0, 0, 2162709, 0, 0, 2162710, 0, 0, 2162711, 0, 0, 2162712, 0, 0, 2162713, 0, 0, 2162714, 0, 0, 2162715, 0, 0, 2162716, 0, 0, 2162717, 0, 0, 2162718, 0, 0, 2162719, 0, 0, 2162720, 0, 0, 2162721, 0, 0, 2162722, 0, 0, 2162723, 0, 0, 2162724, 0, 0, 2162725, 0, 0, 2162726, 0, 0, 2162727, 0, 0, 2162728, 0, 0, 2162729, 0, 0, 2162730, 0, 0, 2162731, 0, 0, 2162732, 0, 0, 2162733, 0, 0, 2162734, 0, 0, 2162735, 0, 0, 2162736, 0, 0, 2162737, 0, 0, 2162738, 0, 0, 2162739, 0, 0, 2162740, 0, 0, 2162741, 0, 0, 2162742, 0, 0, 2162743, 0, 0, 2162744, 0, 0, 2162745, 0, 0, 2162746, 0, 0, 2162747, 0, 0, 2162748, 0, 0, 2162749, 0, 0, 2162750, 0, 0, 2162751, 0, 0, 2162752, 0, 0, 2162753, 0, 0, 2162754, 0, 0, 2162755, 0, 0, 2162756, 0, 0, 2162757, 0, 0, 2162758, 0, 0, 2162759, 0, 0, 2162760, 0, 0, 2162761, 0, 0, 2162762, 0, 0, 2162763, 0, 0, 2293751, 0, 0, 2293752, 0, 0, 2293753, 0, 0, 2293754, 0, 0, 2293755, 0, 0, 2293756, 0, 0, 2293757, 0, 0, 2293758, 0, 0, 2293759, 0, 0, 2228224, 0, 0, 2228225, 0, 0, 2228226, 0, 0, 2228227, 0, 0, 2228228, 0, 0, 2228229, 0, 0, 2228230, 0, 0, 2228231, 0, 0, 2228232, 0, 0, 2228233, 0, 0, 2228234, 0, 0, 2228235, 0, 0, 2228236, 0, 0, 2228237, 0, 0, 2228238, 0, 0, 2228239, 0, 0, 2228240, 0, 0, 2228241, 0, 0, 2228242, 0, 0, 2228243, 0, 0, 2228244, 0, 0, 2228245, 0, 0, 2228246, 0, 0, 2228247, 0, 0, 2228248, 0, 0, 2228249, 0, 0, 2228250, 0, 0, 2228251, 0, 0, 2228252, 0, 0, 2228253, 0, 0, 2228254, 0, 0, 2228255, 0, 0, 2228256, 0, 0, 2228257, 0, 0, 2228258, 0, 0, 2228259, 0, 0, 2228260, 0, 0, 2228261, 0, 0, 2228262, 0, 0, 2228263, 0, 0, 2228264, 0, 0, 2228265, 0, 0, 2228266, 0, 0, 2228267, 0, 0, 2228268, 0, 0, 2228269, 0, 0, 2228270, 0, 0, 2228271, 0, 0, 2228272, 0, 0, 2228273, 0, 0, 2228274, 0, 0, 2228275, 0, 0, 2228276, 0, 0, 2228277, 0, 0, 2228278, 0, 0, 2228279, 0, 0, 2228280, 0, 0, 2228281, 0, 0, 2228282, 0, 0, 2228283, 0, 0, 2228284, 0, 0, 2228285, 0, 0, 2228286, 0, 0, 2228287, 0, 0, 2228288, 0, 0, 2228289, 0, 0, 2228290, 0, 0, 2228291, 0, 0, 2228292, 0, 0, 2228293, 0, 0, 2228294, 0, 0, 2228295, 0, 0, 2228296, 0, 0, 2228297, 0, 0, 2228298, 0, 0, 2228299, 0, 0, 2359287, 0, 0, 2359288, 0, 0, 2359289, 0, 0, 2359290, 0, 0, 2359291, 0, 0, 2359292, 0, 0, 2359293, 0, 0, 2359294, 0, 0, 2359295, 0, 0, 2293760, 0, 0, 2293761, 0, 0, 2293762, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293770, 0, 0, 2293771, 0, 0, 2293772, 0, 0, 2293773, 0, 0, 2293774, 0, 0, 2293775, 0, 0, 2293776, 0, 0, 2293777, 0, 0, 2293778, 0, 0, 2293779, 0, 0, 2293780, 0, 0, 2293781, 0, 0, 2293782, 0, 0, 2293783, 0, 0, 2293784, 0, 0, 2293785, 0, 0, 2293786, 0, 0, 2293787, 0, 0, 2293788, 0, 0, 2293789, 0, 0, 2293790, 0, 0, 2293791, 0, 0, 2293792, 0, 0, 2293793, 0, 0, 2293794, 0, 0, 2293795, 0, 0, 2293796, 0, 0, 2293797, 0, 0, 2293798, 0, 0, 2293799, 0, 0, 2293800, 0, 0, 2293801, 0, 0, 2293802, 0, 0, 2293803, 0, 0, 2293804, 0, 0, 2293805, 0, 0, 2293806, 0, 0, 2293807, 0, 0, 2293808, 0, 0, 2293809, 0, 0, 2293810, 0, 0, 2293811, 0, 0, 2293812, 0, 0, 2293813, 0, 0, 2293814, 0, 0, 2293815, 0, 0, 2293816, 0, 0, 2293817, 0, 0, 2293818, 0, 0, 2293819, 0, 0, 2293820, 0, 0, 2293821, 0, 0, 2293822, 0, 0, 2293823, 0, 0, 2293824, 0, 0, 2293825, 0, 0, 2293826, 0, 0, 2293827, 0, 0, 2293828, 0, 0, 2293829, 0, 0, 2293830, 0, 0, 2293831, 0, 0, 2293832, 0, 0, 2293833, 0, 0, 2293834, 0, 0, 2293835, 0, 0, 2424823, 0, 0, 2424824, 0, 0, 2424825, 0, 0, 2424826, 0, 0, 2424827, 0, 0, 2424828, 0, 0, 2424829, 0, 0, 2424830, 0, 0, 2424831, 0, 0, 2359296, 0, 0, 2359297, 0, 0, 2359298, 0, 0, 2359299, 0, 0, 2359300, 0, 0, 2359301, 0, 0, 2359302, 0, 0, 2359303, 0, 0, 2359304, 0, 0, 2359305, 0, 0, 2359306, 0, 0, 2359307, 0, 0, 2359308, 0, 0, 2359309, 0, 0, 2359310, 0, 0, 2359311, 0, 0, 2359312, 0, 0, 2359313, 0, 0, 2359314, 0, 0, 2359315, 0, 0, 2359316, 0, 0, 2359317, 0, 0, 2359318, 0, 0, 2359319, 0, 0, 2359320, 0, 0, 2359321, 0, 0, 2359322, 0, 0, 2359323, 0, 0, 2359324, 0, 0, 2359325, 0, 0, 2359326, 0, 0, 2359327, 0, 0, 2359328, 0, 0, 2359329, 0, 0, 2359330, 0, 0, 2359331, 0, 0, 2359332, 0, 0, 2359333, 0, 0, 2359334, 0, 0, 2359335, 0, 0, 2359336, 0, 0, 2359337, 0, 0, 2359338, 0, 0, 2359339, 0, 0, 2359340, 0, 0, 2359341, 0, 0, 2359342, 0, 0, 2359343, 0, 0, 2359344, 0, 0, 2359345, 0, 0, 2359346, 0, 0, 2359347, 0, 0, 2359348, 0, 0, 2359349, 0, 0, 2359350, 0, 0, 2359351, 0, 0, 2359352, 0, 0, 2359353, 0, 0, 2359354, 0, 0, 2359355, 0, 0, 2359356, 0, 0, 2359357, 0, 0, 2359358, 0, 0, 2359359, 0, 0, 2359360, 0, 0, 2359361, 0, 0, 2359362, 0, 0, 2359363, 0, 0, 2359364, 0, 0, 2359365, 0, 0, 2359366, 0, 0, 2359367, 0, 0, 2359368, 0, 0, 2359369, 0, 0, 2359370, 0, 0, 2359371, 0, 0, 2490359, 0, 0, 2490360, 0, 0, 2490361, 0, 0, 2490362, 0, 0, 2490363, 0, 0, 2490364, 0, 0, 2490365, 0, 0, 2490366, 0, 0, 2490367, 0, 0, 2424832, 0, 0, 2424833, 0, 0, 2424834, 0, 0, 2424835, 0, 0, 2424836, 0, 0, 2424837, 0, 0, 2424838, 0, 0, 2424839, 0, 0, 2424840, 0, 0, 2424841, 0, 0, 2424842, 0, 0, 2424843, 0, 0, 2424844, 0, 0, 2424845, 0, 0, 2424846, 0, 0, 2424847, 0, 0, 2424848, 0, 0, 2424849, 0, 0, 2424850, 0, 0, 2424851, 0, 0, 2424852, 0, 0, 2424853, 0, 0, 2424854, 0, 0, 2424855, 0, 0, 2424856, 0, 0, 2424857, 0, 0, 2424858, 0, 0, 2424859, 0, 0, 2424860, 0, 0, 2424861, 0, 0, 2424862, 0, 0, 2424863, 0, 0, 2424864, 0, 0, 2424865, 0, 0, 2424866, 0, 0, 2424867, 0, 0, 2424868, 0, 0, 2424869, 0, 0, 2424870, 0, 0, 2424871, 0, 0, 2424872, 0, 0, 2424873, 0, 0, 2424874, 0, 0, 2424875, 0, 0, 2424876, 0, 0, 2424877, 0, 0, 2424878, 0, 0, 2424879, 0, 0, 2424880, 0, 0, 2424881, 0, 0, 2424882, 0, 0, 2424883, 0, 0, 2424884, 0, 0, 2424885, 0, 0, 2424886, 0, 0, 2424887, 0, 0, 2424888, 0, 0, 2424889, 0, 0, 2424890, 0, 0, 2424891, 0, 0, 2424892, 0, 0, 2424893, 0, 0, 2424894, 0, 0, 2424895, 0, 0, 2424896, 0, 0, 2424897, 0, 0, 2424898, 0, 0, 2424899, 0, 0, 2424900, 0, 0, 2424901, 0, 0, 2424902, 0, 0, 2424903, 0, 0, 2424904, 0, 0, 2424905, 0, 0, 2424906, 0, 0, 2424907, 0, 0 )
+
+[node name="ground" type="TileMap" parent="Background"]
+visible = false
+position = Vector2( 0, 103 )
+scale = Vector2( 1, 1.475 )
+tile_set = SubResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1376256, 0, 0, 1376268, 0, 0, 1376280, 0, 0, 1376292, 0, 0, 1376304, 0, 0, 1376316, 0, 0 )
+
+[node name="TileMap2" type="TileMap" parent="Background"]
+scale = Vector2( 2, 2 )
+tile_set = SubResource( 6 )
+format = 1
+tile_data = PoolIntArray( 65540, 0, 0 )
+
+[node name="Bg2" type="TileMap" parent="Background"]
+modulate = Color( 0.133333, 0, 0, 1 )
+scale = Vector2( -3, 3 )
+tile_set = SubResource( 8 )
+format = 1
+tile_data = PoolIntArray( 65535, 1, 0 )
+
 [node name="Elements" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Header" type="Label" parent="Elements"]
 anchor_right = 1.0
-margin_bottom = 14.0
+margin_bottom = 241.0
 rect_min_size = Vector2( 0, 100 )
-custom_colors/font_color = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_colors/font_color = Color( 0.835294, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 5
 custom_fonts/font = SubResource( 2 )
-text = "GAME NAME "
-align = 2
+text = "ATONEMENT"
+align = 1
+valign = 2
 uppercase = true
 
 [node name="Story" type="Button" parent="Elements"]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 40.0
@@ -52,6 +812,7 @@ flat = true
 align = 0
 
 [node name="Options" type="Button" parent="Elements"]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 40.0
@@ -68,6 +829,7 @@ flat = true
 align = 0
 
 [node name="Controls" type="Button" parent="Elements"]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 40.0
@@ -84,6 +846,7 @@ flat = true
 align = 0
 
 [node name="Exit" type="Button" parent="Elements"]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 40.0
@@ -100,8 +863,61 @@ flat = true
 align = 0
 
 [node name="TransitionScreen" parent="Elements" instance=ExtResource( 3 )]
+margin_top = 5.0
+margin_bottom = 5.0
 
 [node name="ButtonAudio" type="AudioStreamPlayer" parent="Elements"]
+
+[node name="Button" type="Button" parent="Elements"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = 18.5
+margin_right = 54.0
+margin_bottom = 61.5
+custom_fonts/font = SubResource( 10 )
+text = "PLAY"
+flat = true
+
+[node name="Button2" type="Button" parent="Elements"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = 66.5
+margin_right = 54.0
+margin_bottom = 109.5
+custom_fonts/font = SubResource( 10 )
+text = "OPTIONS"
+flat = true
+
+[node name="Button3" type="Button" parent="Elements"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = 114.5
+margin_right = 54.0
+margin_bottom = 157.5
+custom_fonts/font = SubResource( 10 )
+text = "EXIT"
+flat = true
+
+[node name="bloodSplat" type="TextureRect" parent="Elements"]
+self_modulate = Color( 1, 1, 1, 0.0431373 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="bloodAnim" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 11 )
+anims/RESET = SubResource( 12 )
 
 [connection signal="pressed" from="Elements/Story" to="." method="_on_Story_pressed"]
 [connection signal="pressed" from="Elements/Options" to="." method="_on_Options_pressed"]
