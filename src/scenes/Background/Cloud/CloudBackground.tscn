@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/scenes/Background/Cloud/moon.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/Background/Cloud/Cloud2.png" type="Texture" id=2]
+[ext_resource path="res://src/scenes/Background/Cloud/Cloud1.png" type="Texture" id=3]
+[ext_resource path="res://src/scenes/Background/Cloud/CloudBackgroundFix.gd" type="Script" id=4]
+
+[node name="CloudBackground" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Cloud1" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 0, 600 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Cloud1"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Image1" type="Sprite" parent="Cloud1/ParallaxLayer"]
+modulate = Color( 0.172549, 0.172549, 0.172549, 1 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1026, 600 )
+
+[node name="Cloud2" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 0, 600 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Cloud2"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Image2" type="Sprite" parent="Cloud2/ParallaxLayer2"]
+modulate = Color( 0.862745, 0.0784314, 0.235294, 1 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1026, 600 )
+
+[node name="Cloud3" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 0, 600 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Cloud3"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Image3" type="Sprite" parent="Cloud3/ParallaxLayer3"]
+modulate = Color( 0.329412, 0.329412, 0.329412, 1 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1026, 600 )
