@@ -1,0 +1,112 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/scenes/menu/Pause/PauseMenu/Pause.gd" type="Script" id=1]
+[ext_resource path="res://src/fonts/Saxon-Abbey.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/scenes/menu/TransitionScreen/TransitionScreen.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+outline_size = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 2 )
+
+[node name="Failed" type="CanvasLayer"]
+pause_mode = 2
+layer = 128
+visible = false
+script = ExtResource( 1 )
+MainMenu = "res://src/scenes/menu/Menu/MainMenu.tscn"
+
+[node name="Elements" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.509804 )
+
+[node name="Header" type="Label" parent="Elements"]
+anchor_right = 1.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 100 )
+custom_colors/font_color = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "YOU ARE DEAD "
+align = 1
+uppercase = true
+
+[node name="Resume" type="Button" parent="Elements"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = -32.0
+margin_right = 227.0
+margin_bottom = 20.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "RESUME"
+flat = true
+align = 0
+
+[node name="Restart" type="Button" parent="Elements"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = 32.0
+margin_right = 250.0
+margin_bottom = 84.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "RESTART"
+flat = true
+align = 0
+
+[node name="Menu" type="Button" parent="Elements"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = 96.0
+margin_right = 305.0
+margin_bottom = 148.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "MAIN MENU"
+flat = true
+align = 0
+
+[node name="Exit" type="Button" parent="Elements"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = 160.0
+margin_right = 156.0
+margin_bottom = 212.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.0784314, 0.235294, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "EXIT"
+flat = true
+align = 0
+
+[node name="TransitionScreen" parent="Elements" instance=ExtResource( 3 )]
+
+[node name="ButtonAudio" type="AudioStreamPlayer" parent="Elements"]
+
+[connection signal="pressed" from="Elements/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Elements/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="Elements/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="Elements/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="animation_finished" from="Elements/TransitionScreen/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="Elements/TransitionScreen"]
